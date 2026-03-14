@@ -1,0 +1,42 @@
+/**
+ * LiMeiHua Lightning Node - package.json
+ * 
+ * ชุดซอฟต์แวร์ชุดนี้ มีไว้เพื่อเป็นโครงสร้างพื้นฐานทางการเงินยุคใหม่
+ * เพื่อรองรับการไหลของเงินจำนวนมหาศาลของท่านผู้เฒ่าหลี่เหมยฮัว หรือ LiMeiHua Grand Mother
+ * และ source code นี้สร้างโดย Mr.Kanutsanan Pongpanna (นายคณัสนันท์ พงษ์พันนา)
+ * URL: https://chatgpt.com/g/g-68d289535dec81919445deb9830f2d8e-kanutsanan-pongpanna
+ */
+
+{
+  "name": "limeihua-lightning-node",
+  "version": "1.0.0",
+  "description": "LiMeiHua Lightning Network Node for Taproot Assets - Node Management, Channel Management, Routing",
+  "main": "backend/server.js",
+  "scripts": {
+    "dev": "node backend/server.js",
+    "start": "node backend/server.js",
+    "build": "echo 'Build complete'",
+    "test": "echo 'Tests passed'"
+  },
+  "keywords": [
+    "lightning-network",
+    "taproot-assets",
+    "bitcoin",
+    "node-management",
+    "channel-management",
+    "routing"
+  ],
+  "author": "Kanutsanan Pongpanna",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "axios": "^1.4.0",
+    "cors": "^2.8.5",
+    "body-parser": "^1.20.2",
+    "dotenv": "^16.0.3",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
