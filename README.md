@@ -1,697 +1,648 @@
-/**
- * LiMeiHua Lightning Node - README.md
- * 
- * ชุดซอฟต์แวร์ชุดนี้ มีไว้เพื่อเป็นโครงสร้างพื้นฐานทางการเงินยุคใหม่
- * เพื่อรองรับการไหลของเงินจำนวนมหาศาลของท่านผู้เฒ่าหลี่เหมยฮัว หรือ LiMeiHua Grand Mother
- * และ source code นี้สร้างโดย Mr.Kanutsanan Pongpanna (นายคณัสนันท์ พงษ์พันนา)
- * URL: https://chatgpt.com/g/g-68d289535dec81919445deb9830f2d8e-kanutsanan-pongpanna
- */
+# LiMeiHua Taproot Assets - Comprehensive Multi-Language Documentation
 
-# ⚡ LiMeiHua Lightning Node
-
-Lightning Network Node สำหรับ Taproot Assets - Node Management, Channel Management, Routing
+> ชุดซอฟต์แวร์ชุดนี้ มีไว้เพื่อเป็นโครงสร้างพื้นฐานทางการเงินยุคใหม่เพื่อรองรับการไหลของเงินจำนวนมหาศาลของท่านผู้เฒ่าหลี่เหมยฮัว หรือ LiMeiHua Grand Mother 
+> และ source code นี้สร้างโดย Mr.Kanutsanan Pongpanna (นายคณัสนันท์ พงษ์พันนา) 
+> URL: https://chatgpt.com/g/g-68d289535dec81919445deb9830f2d8e-kanutsanan-pongpanna
 
 ---
 
-## 📋 Table of Contents
+## 📖 Table of Contents
 
-- [English](#english)
-- [ไทย (Thai)](#thai)
-- [中文 (Chinese Simplified)](#chinese-simplified)
-- [中文繁體 (Chinese Traditional)](#chinese-traditional)
-- [日本語 (Japanese)](#japanese)
-- [한국어 (Korean)](#korean)
-- [Español (Spanish)](#spanish)
-- [Français (French)](#french)
-- [Deutsch (German)](#german)
-- [Português (Portuguese)](#portuguese)
-- [Русский (Russian)](#russian)
-- [العربية (Arabic)](#arabic)
-- [हिन्दी (Hindi)](#hindi)
-- [Tiếng Việt (Vietnamese)](#vietnamese)
-- [Bahasa Indonesia (Indonesian)](#indonesian)
-- [Bahasa Melayu (Malay)](#malay)
-- [Türkçe (Turkish)](#turkish)
-- [Italiano (Italian)](#italian)
-- [Nederlands (Dutch)](#dutch)
-- [Polski (Polish)](#polish)
-- [Svenska (Swedish)](#swedish)
-- [Українська (Ukrainian)](#ukrainian)
-- [Čeština (Czech)](#czech)
-- [Română (Romanian)](#romanian)
-- [Ελληνικά (Greek)](#greek)
-- [עברית (Hebrew)](#hebrew)
-- [বাংলা (Bengali)](#bengali)
-- [Filipino (Tagalog)](#tagalog)
-- [Kiswahili (Swahili)](#swahili)
+- [🌐 Available Languages](#-available-languages)
+- [📚 Documentation by Language](#-documentation-by-language)
+- [🎯 Project Overview](#-project-overview)
+- [✨ Features](#-features)
+- [🚀 Getting Started](#-getting-started)
+- [💡 Use Cases](#-use-cases)
+- [🔧 Technical Stack](#-technical-stack)
+- [📊 Language Statistics](#-language-statistics)
 
 ---
 
-## English
+## 🌐 Available Languages
 
-### 🌟 Overview
+This project supports **40+ languages** across multiple regions:
 
-**LiMeiHua Lightning Node** is a comprehensive Lightning Network node management system designed for Taproot Assets on Bitcoin. It provides an intuitive GUI for managing channels, peers, and payment routing with cyberpunk aesthetics.
+### ASEAN Region (9 Languages)
+🇹🇭 Thai | 🇱🇦 Lao | 🇲🇲 Burmese | 🇻🇳 Vietnamese | 🇰🇭 Khmer | 🇲🇾 Malay | 🇮🇩 Indonesian | 🇵🇭 Filipino | 🇱🇰 Tamil
 
-### ✨ Features
+### Other Regions (5 Languages)
+🇷🇺 Russian | 🇲🇳 Mongolian | 🇱🇰 Sinhala | 🇧🇹 Dzongkha | 🇳🇵 Nepali
 
-- **Node Management**: Monitor node status, uptime, and statistics
-- **Channel Management**: Open, close, and manage Lightning channels
-- **Peer Management**: Connect and manage peers
-- **Payment Routing**: Query routes and send payments
-- **Real-time Updates**: Live dashboard with 5-second refresh
-- **Cyberpunk UI**: Modern neon-themed interface
-- **RESTful API**: Complete API for node operations
-- **Multi-language Support**: 28 languages
+### India (21 Languages)
+🇮🇳 Hindi | Bengali | Telugu | Marathi | Tamil | Urdu | Gujarati | Kannada | Malayalam | Odia | Punjabi | Assamese | Maithili | Santali | Kashmiri | Nepali | Sindhi | Dogri | Manipuri | Bodo | Konkani
 
-### 🚀 Quick Start
-
-```bash
-# Install dependencies
-npm install
-
-# Start backend server
-npm run dev
-
-# Start frontend (in another terminal)
-cd frontend
-npm install
-npm start
-```
-
-### 📖 API Documentation
-
-#### Node Information
-- `GET /api/node/info` - Get node information
-- `GET /api/node/stats` - Get node statistics
-
-#### Channel Management
-- `GET /api/channels` - List all channels
-- `POST /api/channels/open` - Open a new channel
-- `POST /api/channels/:channelId/close` - Close a channel
-- `GET /api/channels/:channelId` - Get channel details
-
-#### Peer Management
-- `GET /api/peers` - List all peers
-- `POST /api/peers/connect` - Connect to a peer
-- `POST /api/peers/:peerId/disconnect` - Disconnect from peer
-
-#### Payment Routing
-- `POST /api/routing/send` - Send a payment
-- `GET /api/routing/payment/:paymentId` - Get payment status
-- `POST /api/routing/query-routes` - Query available routes
-
-### 🔧 Configuration
-
-Create a `.env` file based on `.env.example`:
-
-```env
-PORT=3000
-LN_NODE_ALIAS=My Lightning Node
-LN_NETWORK=testnet
-```
-
-### 📦 Project Structure
-
-```
-limeihua-lightning-node/
-├── backend/
-│   └── server.js           # Express API server
-├── frontend/
-│   └── src/
-│       ├── App.jsx         # React main component
-│       └── App.css         # Cyberpunk styling
-├── package.json
-├── .env.example
-├── README.md
-├── LICENSE
-└── .gitignore
-```
+### Global (20+ Languages)
+🌍 English | 🇨🇳 Chinese (Simplified & Traditional) | 🇯🇵 Japanese | 🇰🇷 Korean | 🇪🇸 Spanish | 🇫🇷 French | 🇩🇪 German | 🇵🇹 Portuguese | 🇸🇦 Arabic | 🇹🇷 Turkish | 🇮🇹 Italian | 🇳🇱 Dutch | 🇵🇱 Polish | 🇸🇪 Swedish | 🇺🇦 Ukrainian | 🇨🇿 Czech | 🇷🇴 Romanian | 🇬🇷 Greek | 🇮🇱 Hebrew | 🇹🇿 Swahili
 
 ---
 
-## ไทย (Thai)
+## 📚 Documentation by Language
 
-### 🌟 ภาพรวม
+### English Documentation
+**LiMeiHua Taproot Assets** is a modern financial infrastructure platform designed to support massive money flow for LiMeiHua Grand Mother. This comprehensive system enables users to create, manage, and trade Taproot Assets tokens on the Bitcoin Lightning Network.
 
-**LiMeiHua Lightning Node** เป็นระบบจัดการ Lightning Network Node ที่ครอบคลุมซึ่งออกแบบมาสำหรับ Taproot Assets บน Bitcoin โดยมี GUI ที่ใช้งานง่ายสำหรับการจัดการช่องทาง Peers และการกำหนดเส้นทางการชำระเงิน พร้อมสไตล์ Cyberpunk
+**Key Features:**
+- Create custom Taproot Assets tokens with flexible parameters
+- Manage token supply (fixed, mintable, or burnable)
+- Calculate gas fees and transaction costs
+- Send and receive tokens on Lightning Network
+- Multi-platform support (Web, Mobile, Desktop)
+- World ID integration for enhanced security
+- Airdrop distribution system
+- Payment gateway integration
+- Lightning Node management
 
-### ✨ ฟีเจอร์
-
-- **จัดการ Node**: ตรวจสอบสถานะ Node, เวลาทำงาน และสถิติ
-- **จัดการ Channel**: เปิด, ปิด และจัดการ Lightning Channels
-- **จัดการ Peer**: เชื่อมต่อและจัดการ Peers
-- **การกำหนดเส้นทาง**: ค้นหาเส้นทางและส่งการชำระเงิน
-- **อัปเดตแบบเรียลไทม์**: แดชบอร์ดสดใจ พร้อมการรีเฟรช 5 วินาที
-- **UI Cyberpunk**: อินเทอร์เฟซสไตล์นีออนสมัยใหม่
-- **API RESTful**: API ที่สมบูรณ์สำหรับการดำเนินการ Node
-- **รองรับหลายภาษา**: 28 ภาษา
-
-### 🚀 เริ่มต้นอย่างรวดเร็ว
-
-```bash
-# ติดตั้ง dependencies
-npm install
-
-# เริ่ม backend server
-npm run dev
-
-# เริ่ม frontend (ในเทอร์มินัลอื่น)
-cd frontend
-npm install
-npm start
-```
+**Getting Started:**
+1. Visit the platform or install the application
+2. Connect your Lightning Network wallet
+3. Create your first Taproot Assets token
+4. Start managing your digital assets
 
 ---
 
-## 中文 (Chinese Simplified)
+### ไทย (Thai Documentation)
+**LiMeiHua Taproot Assets** เป็นแพลตฟอร์มโครงสร้างพื้นฐานทางการเงินสมัยใหม่ที่ออกแบบมาเพื่อรองรับการไหลของเงินจำนวนมหาศาลของท่านผู้เฒ่าหลี่เหมยฮัว ระบบที่ครอบคลุมนี้ช่วยให้ผู้ใช้สามารถสร้าง จัดการ และซื้อขาย Taproot Assets tokens บน Bitcoin Lightning Network
 
-### 🌟 概述
+**ฟีเจอร์หลัก:**
+- สร้าง Taproot Assets tokens ที่กำหนดเองได้
+- จัดการปริมาณ token (fixed, mintable, burnable)
+- คำนวณค่าแก๊สและค่าธุรกรรม
+- ส่งและรับ tokens บน Lightning Network
+- รองรับหลายแพลตฟอร์ม (Web, Mobile, Desktop)
+- บูรณาการ World ID เพื่อความปลอดภัยที่ดีขึ้น
+- ระบบแจกจ่าย Airdrop
+- บูรณาการ Payment Gateway
+- จัดการ Lightning Node
 
-**LiMeiHua Lightning Node** 是一个为比特币上的 Taproot Assets 设计的综合 Lightning Network 节点管理系统。它提供了一个直观的 GUI，用于管理通道、对等节点和支付路由，具有赛博朋克美学。
-
-### ✨ 特性
-
-- **节点管理**：监控节点状态、正常运行时间和统计信息
-- **通道管理**：打开、关闭和管理 Lightning 通道
-- **对等节点管理**：连接和管理对等节点
-- **支付路由**：查询路由并发送支付
-- **实时更新**：实时仪表板，每 5 秒刷新一次
-- **赛博朋克 UI**：现代霓虹主题界面
-- **RESTful API**：完整的节点操作 API
-- **多语言支持**：28 种语言
-
----
-
-## 中文繁體 (Chinese Traditional)
-
-### 🌟 概述
-
-**LiMeiHua Lightning Node** 是一個為比特幣上的 Taproot Assets 設計的綜合 Lightning Network 節點管理系統。它提供了一個直觀的 GUI，用於管理通道、對等節點和支付路由，具有賽博朋克美學。
-
-### ✨ 特性
-
-- **節點管理**：監控節點狀態、正常運行時間和統計信息
-- **通道管理**：打開、關閉和管理 Lightning 通道
-- **對等節點管理**：連接和管理對等節點
-- **支付路由**：查詢路由並發送支付
-- **實時更新**：實時儀表板，每 5 秒刷新一次
-- **賽博朋克 UI**：現代霓虹主題界面
-- **RESTful API**：完整的節點操作 API
-- **多語言支持**：28 種語言
+**เริ่มต้นใช้งาน:**
+1. เยี่ยมชมแพลตฟอร์มหรือติดตั้งแอปพลิเคชัน
+2. เชื่อมต่อ Lightning Network wallet ของคุณ
+3. สร้าง Taproot Assets token แรกของคุณ
+4. เริ่มจัดการสินทรัพย์ดิจิทัลของคุณ
 
 ---
 
-## 日本語 (Japanese)
+### ລາວ (Lao Documentation)
+**LiMeiHua Taproot Assets** ແມ່ນແພັດຟອມໂຄງສ້າງພື້ນຖານດ້ານການເງິນສະໄໝໃໝ່ທີ່ອອກແບບມາເພື່ອສະໜັບສະໜູນການໄຫຼຂອງເງິນຈໍານວນຫຼວງຫຼາຍສໍາລັບທ່ານຜູ້ເຖົ້າຫລີ່ເຫມຍຮວົ (LiMeiHua Grand Mother)
 
-### 🌟 概要
-
-**LiMeiHua Lightning Node** は、ビットコイン上の Taproot Assets 用に設計された包括的な Lightning Network ノード管理システムです。サイバーパンク美学を備えたチャネル、ピア、支払いルーティング管理用の直感的な GUI を提供します。
-
-### ✨ 機能
-
-- **ノード管理**：ノードのステータス、稼働時間、統計情報を監視
-- **チャネル管理**：Lightning チャネルを開く、閉じる、管理
-- **ピア管理**：ピアを接続および管理
-- **支払いルーティング**：ルートをクエリして支払いを送信
-- **リアルタイム更新**：5 秒ごとにリフレッシュするライブダッシュボード
-- **サイバーパンク UI**：モダンなネオンテーマインターフェース
-- **RESTful API**：ノード操作用の完全な API
-- **多言語サポート**：28 言語
+**ຄຸນສົມບັດຫຼັກ:**
+- ສ້າງ Taproot Assets tokens ທີ່ກໍາຫນົດເອງໄດ້
+- ຈັດການປະລິມານ token (fixed, mintable, burnable)
+- ຄໍານວນຄ່າແກ໊ສແລະຄ່າທຸລະກໍາ
+- ສົ່ງແລະຮັບ tokens ໃນ Lightning Network
+- ສະໜັບສະໜູນຫຼາຍແພັດຟອມ (Web, Mobile, Desktop)
+- ປະສົມປະສານ World ID ສໍາລັບຄວາມປອດໄພທີ່ດີຂຶ້ນ
+- ລະບົບແຈກຢາຍ Airdrop
+- ປະສົມປະສານ Payment Gateway
+- ຈັດການ Lightning Node
 
 ---
 
-## 한국어 (Korean)
+### မြန်မာ (Burmese Documentation)
+**LiMeiHua Taproot Assets** သည် LiMeiHua Grand Mother အတွက် 거대한ငွေ့စီးဆင်းမှုကို ထောက်ခံရန် ဒီဇိုင်းထုတ်ထားသော ခေတ်သစ် ငွေကြေးအခြေခံ ကွန်ပ်ျူတာ ပလက်ဖောင်းဖြစ်သည်။
 
-### 🌟 개요
-
-**LiMeiHua Lightning Node**는 비트코인의 Taproot Assets를 위해 설계된 포괄적인 Lightning Network 노드 관리 시스템입니다. 사이버펑크 미학을 갖춘 채널, 피어 및 결제 라우팅 관리용 직관적인 GUI를 제공합니다.
-
-### ✨ 기능
-
-- **노드 관리**: 노드 상태, 가동 시간 및 통계 모니터링
-- **채널 관리**: Lightning 채널 열기, 닫기 및 관리
-- **피어 관리**: 피어 연결 및 관리
-- **결제 라우팅**: 경로 쿼리 및 결제 전송
-- **실시간 업데이트**: 5초마다 새로 고침되는 라이브 대시보드
-- **사이버펑크 UI**: 현대적인 네온 테마 인터페이스
-- **RESTful API**: 노드 작업을 위한 완전한 API
-- **다중 언어 지원**: 28개 언어
+**အဓိက ဝိသေသလက္ခဏာများ:**
+- စိတ်ကြိုက် Taproot Assets tokens များ ဖန်တီးခြင်း
+- Token ပမာណ ကိုင်တွယ်ခြင်း (fixed, mintable, burnable)
+- ဂ်ဆ ကုန်ကျစရိတ် တွက်ချက်ခြင်း
+- Lightning Network တွင် tokens ပို့ခြင်း နှင့် လက်ခံခြင်း
+- အများအပြား ပလက်ဖောင်း ထောက်ခံခြင်း (Web, Mobile, Desktop)
+- ကောင်းမွန်သော လုံခြုံရေးအတွက် World ID ပေါင်းစပ်ခြင်း
+- Airdrop ဖြန့်ဝေမှု စနစ်
+- Payment Gateway ပေါင်းစပ်ခြင်း
+- Lightning Node စီမံခန့်ခွဲခြင်း
 
 ---
 
-## Español (Spanish)
+### Tiếng Việt (Vietnamese Documentation)
+**LiMeiHua Taproot Assets** là một nền tảng cơ sở hạ tầng tài chính hiện đại được thiết kế để hỗ trợ dòng tiền khổng lồ cho bà LiMeiHua. Hệ thống toàn diện này cho phép người dùng tạo, quản lý và giao dịch các token Taproot Assets trên Bitcoin Lightning Network.
 
-### 🌟 Descripción General
-
-**LiMeiHua Lightning Node** es un sistema integral de gestión de nodos de Lightning Network diseñado para Taproot Assets en Bitcoin. Proporciona una GUI intuitiva para administrar canales, pares y enrutamiento de pagos con estética ciberpunk.
-
-### ✨ Características
-
-- **Gestión de Nodos**: Monitorear estado del nodo, tiempo de actividad y estadísticas
-- **Gestión de Canales**: Abrir, cerrar y administrar canales Lightning
-- **Gestión de Pares**: Conectar y administrar pares
-- **Enrutamiento de Pagos**: Consultar rutas y enviar pagos
-- **Actualizaciones en Tiempo Real**: Panel de control en vivo con actualización cada 5 segundos
-- **UI Ciberpunk**: Interfaz de tema neón moderno
-- **API RESTful**: API completa para operaciones de nodos
-- **Soporte Multiidioma**: 28 idiomas
+**Các Tính Năng Chính:**
+- Tạo các token Taproot Assets tùy chỉnh
+- Quản lý nguồn cung token (cố định, có thể tạo, có thể đốt)
+- Tính toán phí gas và chi phí giao dịch
+- Gửi và nhận token trên Lightning Network
+- Hỗ trợ nhiều nền tảng (Web, Mobile, Desktop)
+- Tích hợp World ID để tăng cường bảo mật
+- Hệ thống phân phối Airdrop
+- Tích hợp Payment Gateway
+- Quản lý Lightning Node
 
 ---
 
-## Français (French)
+### ខ្មែរ (Khmer Documentation)
+**LiMeiHua Taproot Assets** ជាវេទិកាហិរញ្ញវត្ថុលោកទំនើបដែលត្រូវបានរចនាឡើងដើម្បីគាំទ្របរិមាណលុយដ៏ច្រើនសម្រាប់ម្ដាយលីមីហួ។ ប្រព័ន្ធលម្អិតនេះអនុញ្ញាតឱ្យអ្នកប្រើប្រាស់បង្កើត គ្រប់គ្រង និងលក់ទិញ Taproot Assets tokens នៅលើបណ្តាញ Bitcoin Lightning Network។
 
-### 🌟 Aperçu
-
-**LiMeiHua Lightning Node** est un système complet de gestion de nœuds Lightning Network conçu pour Taproot Assets sur Bitcoin. Il fournit une interface graphique intuitive pour gérer les canaux, les pairs et le routage des paiements avec une esthétique cyberpunk.
-
-### ✨ Caractéristiques
-
-- **Gestion des Nœuds**: Surveiller l'état du nœud, le temps de fonctionnement et les statistiques
-- **Gestion des Canaux**: Ouvrir, fermer et gérer les canaux Lightning
-- **Gestion des Pairs**: Connecter et gérer les pairs
-- **Routage des Paiements**: Interroger les itinéraires et envoyer des paiements
-- **Mises à Jour en Temps Réel**: Tableau de bord en direct avec actualisation toutes les 5 secondes
-- **Interface Cyberpunk**: Interface de thème néon moderne
-- **API RESTful**: API complète pour les opérations de nœuds
-- **Support Multilingue**: 28 langues
+**លក្ខណៈពិសេសចម្បង:**
+- បង្កើត Taproot Assets tokens ដែលបានកែប្រែ
+- គ្រប់គ្រងការផ្គត់ផ្គង់ token (ថេរ មិនថេរ ឬអាចដុតបាន)
+- គណនាថ្លៃឧស្ម័ន និងថ្លៃប្រតិបត្តិការ
+- ផ្ញើ និងទទួល tokens នៅលើបណ្តាញ Lightning
+- គាំទ្របេតិកបទច្រើន (Web Mobile Desktop)
+- ការរួមបញ្ចូល World ID សម្រាប់សន្តិសុខប្រសើរ
+- ប្រព័ន្ធចែកចាយ Airdrop
+- ការរួមបញ្ចូល Payment Gateway
+- ការគ្រប់គ្រង Lightning Node
 
 ---
 
-## Deutsch (German)
+### Bahasa Melayu (Malay Documentation)
+**LiMeiHua Taproot Assets** ialah platform infrastruktur kewangan moden yang dirancang untuk menyokong aliran wang yang besar untuk Nenek LiMeiHua. Sistem komprehensif ini membolehkan pengguna membuat, menguruskan, dan berdagang token Taproot Assets di Rangkaian Bitcoin Lightning.
 
-### 🌟 Übersicht
-
-**LiMeiHua Lightning Node** ist ein umfassendes Lightning Network-Knotenverwaltungssystem, das für Taproot Assets auf Bitcoin entwickelt wurde. Es bietet eine intuitive GUI zur Verwaltung von Kanälen, Peers und Zahlungsrouting mit Cyberpunk-Ästhetik.
-
-### ✨ Funktionen
-
-- **Knotenverwaltung**: Überwachen Sie Knotenstatus, Betriebszeit und Statistiken
-- **Kanalverwaltung**: Öffnen, schließen und verwalten Sie Lightning-Kanäle
-- **Peer-Verwaltung**: Verbinden und verwalten Sie Peers
-- **Zahlungsrouting**: Abfragerouten und Zahlungen senden
-- **Echtzeit-Updates**: Live-Dashboard mit 5-Sekunden-Aktualisierung
-- **Cyberpunk-UI**: Modernes Neon-Theme-Interface
-- **RESTful API**: Vollständige API für Knotenvorgänge
-- **Mehrsprachige Unterstützung**: 28 Sprachen
+**Ciri-Ciri Utama:**
+- Buat token Taproot Assets tersuai
+- Urus bekalan token (tetap, boleh dicetak, boleh dibakar)
+- Kira bayaran gas dan kos transaksi
+- Hantar dan terima token di Rangkaian Lightning
+- Sokongan berbilang platform (Web, Mobile, Desktop)
+- Integrasi World ID untuk keselamatan yang lebih baik
+- Sistem pengedaran Airdrop
+- Integrasi Payment Gateway
+- Pengurusan Lightning Node
 
 ---
 
-## Português (Portuguese)
+### Bahasa Indonesia (Indonesian Documentation)
+**LiMeiHua Taproot Assets** adalah platform infrastruktur keuangan modern yang dirancang untuk mendukung aliran uang besar untuk Nenek LiMeiHua. Sistem komprehensif ini memungkinkan pengguna membuat, mengelola, dan memperdagangkan token Taproot Assets di Jaringan Bitcoin Lightning.
 
-### 🌟 Visão Geral
-
-**LiMeiHua Lightning Node** é um sistema abrangente de gerenciamento de nós da Lightning Network projetado para Taproot Assets no Bitcoin. Ele fornece uma GUI intuitiva para gerenciar canais, pares e roteamento de pagamentos com estética cyberpunk.
-
-### ✨ Recursos
-
-- **Gerenciamento de Nós**: Monitorar status do nó, tempo de atividade e estatísticas
-- **Gerenciamento de Canais**: Abrir, fechar e gerenciar canais Lightning
-- **Gerenciamento de Pares**: Conectar e gerenciar pares
-- **Roteamento de Pagamentos**: Consultar rotas e enviar pagamentos
-- **Atualizações em Tempo Real**: Painel ao vivo com atualização a cada 5 segundos
-- **Interface Cyberpunk**: Interface de tema neon moderno
-- **API RESTful**: API completa para operações de nós
-- **Suporte Multilíngue**: 28 idiomas
+**Fitur Utama:**
+- Buat token Taproot Assets yang dapat disesuaikan
+- Kelola pasokan token (tetap, dapat dicetak, dapat dibakar)
+- Hitung biaya gas dan biaya transaksi
+- Kirim dan terima token di Jaringan Lightning
+- Dukungan multi-platform (Web, Mobile, Desktop)
+- Integrasi World ID untuk keamanan yang lebih baik
+- Sistem distribusi Airdrop
+- Integrasi Payment Gateway
+- Manajemen Lightning Node
 
 ---
 
-## Русский (Russian)
+### Filipino (Filipino Documentation)
+**LiMeiHua Taproot Assets** ay isang modernong platform ng financial infrastructure na dinisenyo upang suportahan ang malaking daloy ng pera para sa LiMeiHua Grand Mother. Ang komprehensibong sistemang ito ay nagbibigay-daan sa mga user na lumikha, pamahalaan, at magbenta ng Taproot Assets tokens sa Bitcoin Lightning Network.
 
-### 🌟 Обзор
-
-**LiMeiHua Lightning Node** - это комплексная система управления узлами Lightning Network, разработанная для Taproot Assets на Bitcoin. Она предоставляет интуитивный графический интерфейс для управления каналами, пирами и маршрутизацией платежей с эстетикой киберпанка.
-
-### ✨ Особенности
-
-- **Управление узлами**: Мониторинг статуса узла, времени работы и статистики
-- **Управление каналами**: Открытие, закрытие и управление каналами Lightning
-- **Управление пирами**: Подключение и управление пирами
-- **Маршрутизация платежей**: Запрос маршрутов и отправка платежей
-- **Обновления в реальном времени**: Живая панель с обновлением каждые 5 секунд
-- **Интерфейс киберпанка**: Современный интерфейс с неоновой темой
-- **RESTful API**: Полный API для операций узлов
-- **Многоязычная поддержка**: 28 языков
+**Pangunahing Mga Katangian:**
+- Lumikha ng mga customized Taproot Assets tokens
+- Pamahalaan ang supply ng token (fixed, mintable, burnable)
+- Kalkulahin ang gas fees at transaction costs
+- Magpadala at makatanggap ng tokens sa Lightning Network
+- Suporta sa maraming platform (Web, Mobile, Desktop)
+- Pagsasama ng World ID para sa mas magandang seguridad
+- Sistema ng Airdrop distribution
+- Pagsasama ng Payment Gateway
+- Pamamahala ng Lightning Node
 
 ---
 
-## العربية (Arabic)
+### தமிழ் (Tamil Documentation)
+**LiMeiHua Taproot Assets** என்பது LiMeiHua Grand Mother க்கான பெரிய பணப்புழக்கத்தை ஆதரிக்க வடிவமைக்கப்பட்ட ஒரு நவீன நிதி உள்கட்டமைப்பு தளம். இந்த விரிவான அமைப்பு பயனர்களை Taproot Assets டோக்கன்களை உருவாக்க, நிர்வகிக்க மற்றும் Bitcoin Lightning Network இல் வர்த்தகம் செய்ய அனுமதிக்கிறது.
 
-### 🌟 نظرة عامة
-
-**LiMeiHua Lightning Node** هو نظام شامل لإدارة عقد Lightning Network مصمم لـ Taproot Assets على Bitcoin. يوفر واجهة مستخدم بديهية لإدارة القنوات والأقران وتوجيه الدفع مع جماليات سايبربانك.
-
-### ✨ الميزات
-
-- **إدارة العقد**: مراقبة حالة العقدة ووقت التشغيل والإحصائيات
-- **إدارة القنوات**: فتح وإغلاق وإدارة قنوات Lightning
-- **إدارة الأقران**: الاتصال وإدارة الأقران
-- **توجيه الدفع**: الاستعلام عن المسارات وإرسال الدفعات
-- **التحديثات في الوقت الفعلي**: لوحة معلومات مباشرة مع تحديث كل 5 ثوان
-- **واجهة سايبربانك**: واجهة حديثة بمظهر نيون
-- **API RESTful**: API كامل لعمليات العقد
-- **دعم متعدد اللغات**: 28 لغة
+**முக்கிய அம்சங்கள்:**
+- தனிப்பயனாக்கப்பட்ட Taproot Assets டோக்கன்களை உருவாக்கவும்
+- டோக்கன் விநியோகத்தை நிர்வகிக்கவும் (நிலையான, மிண்டபல், எரியக்கூடிய)
+- வாயு கட்டணம் மற்றும் பரிவர்த்தனை செலவுகளைக் கணக்கிடவும்
+- Lightning Network இல் டோக்கன்களை அனுப்பி பெறவும்
+- பல-தளம் ஆதரவு (Web, Mobile, Desktop)
+- சிறந்த பாதுகாப்பிற்கான World ID ஒருங்கிணைப்பு
+- Airdrop விநியோக அமைப்பு
+- Payment Gateway ஒருங்கிணைப்பு
+- Lightning Node நிர்வாகம்
 
 ---
 
-## हिन्दी (Hindi)
+### Русский (Russian Documentation)
+**LiMeiHua Taproot Assets** - это современная платформа финансовой инфраструктуры, разработанная для поддержки огромного потока денежных средств для бабушки LiMeiHua. Эта комплексная система позволяет пользователям создавать, управлять и торговать токенами Taproot Assets в сети Bitcoin Lightning Network.
 
-### 🌟 अवलोकन
-
-**LiMeiHua Lightning Node** Bitcoin पर Taproot Assets के लिए डिज़ाइन किया गया एक व्यापक Lightning Network नोड प्रबंधन प्रणाली है। यह साइबरपंक सौंदर्य के साथ चैनल, पीयर और भुगतान रूटिंग प्रबंधन के लिए एक सहज GUI प्रदान करता है।
-
-### ✨ विशेषताएं
-
-- **नोड प्रबंधन**: नोड स्थिति, अपटाइम और आंकड़ों की निगरानी करें
-- **चैनल प्रबंधन**: Lightning चैनल खोलें, बंद करें और प्रबंधित करें
-- **पीयर प्रबंधन**: पीयर को कनेक्ट और प्रबंधित करें
-- **भुगतान रूटिंग**: मार्गों की क्वेरी करें और भुगतान भेजें
-- **रीयल-टाइम अपडेट**: 5 सेकंड की रीफ्रेश के साथ लाइव डैशबोर्ड
-- **साइबरपंक UI**: आधुनिक नीयन थीम इंटरफेस
-- **RESTful API**: नोड संचालन के लिए संपूर्ण API
-- **बहुभाषी समर्थन**: 28 भाषाएं
+**Основные возможности:**
+- Создание пользовательских токенов Taproot Assets
+- Управление предложением токенов (фиксированное, чеканка, сжигание)
+- Расчет комиссий за газ и стоимости транзакций
+- Отправка и получение токенов в сети Lightning Network
+- Поддержка нескольких платформ (Web, Mobile, Desktop)
+- Интеграция World ID для повышенной безопасности
+- Система распределения Airdrop
+- Интеграция Payment Gateway
+- Управление узлом Lightning
 
 ---
 
-## Tiếng Việt (Vietnamese)
+### हिन्दी (Hindi Documentation)
+**LiMeiHua Taproot Assets** एक आधुनिक वित्तीय बुनियादी ढांचा मंच है जो LiMeiHua Grand Mother के लिए भारी मात्रा में धन प्रवाह का समर्थन करने के लिए डिज़ाइन किया गया है। यह व्यापक प्रणाली उपयोगकर्ताओं को Taproot Assets टोकन बनाने, प्रबंधित करने और Bitcoin Lightning Network पर व्यापार करने की अनुमति देती है।
 
-### 🌟 Tổng Quan
-
-**LiMeiHua Lightning Node** là một hệ thống quản lý nút Lightning Network toàn diện được thiết kế cho Taproot Assets trên Bitcoin. Nó cung cấp giao diện người dùng trực quan để quản lý các kênh, ngang hàng và định tuyến thanh toán với th美học cyberpunk.
-
-### ✨ Tính Năng
-
-- **Quản Lý Nút**: Giám sát trạng thái nút, thời gian hoạt động và thống kê
-- **Quản Lý Kênh**: Mở, đóng và quản lý các kênh Lightning
-- **Quản Lý Ngang Hàng**: Kết nối và quản lý các ngang hàng
-- **Định Tuyến Thanh Toán**: Truy vấn tuyến đường và gửi thanh toán
-- **Cập Nhật Thời Gian Thực**: Bảng điều khiển trực tiếp với làm mới mỗi 5 giây
-- **Giao Diện Cyberpunk**: Giao diện chủ đề neon hiện đại
-- **API RESTful**: API đầy đủ cho các hoạt động nút
-- **Hỗ Trợ Đa Ngôn Ngữ**: 28 ngôn ngữ
+**मुख्य विशेषताएं:**
+- कस्टमाइज़्ड Taproot Assets टोकन बनाएं
+- टोकन आपूर्ति प्रबंधित करें (निश्चित, मिंटेबल, बर्नेबल)
+- गैस शुल्क और लेनदेन लागत की गणना करें
+- Lightning Network पर टोकन भेजें और प्राप्त करें
+- मल्टी-प्लेटफॉर्म समर्थन (Web, Mobile, Desktop)
+- बेहतर सुरक्षा के लिए World ID एकीकरण
+- Airdrop वितरण प्रणाली
+- Payment Gateway एकीकरण
+- Lightning Node प्रबंधन
 
 ---
 
-## Bahasa Indonesia (Indonesian)
+### 中文 (Chinese Simplified Documentation)
+**LiMeiHua Taproot Assets** 是一个现代金融基础设施平台，旨在为李美华奶奶支持大规模资金流动。这个综合系统使用户能够在比特币闪电网络上创建、管理和交易 Taproot Assets 代币。
 
-### 🌟 Ikhtisar
-
-**LiMeiHua Lightning Node** adalah sistem manajemen node Lightning Network yang komprehensif yang dirancang untuk Taproot Assets di Bitcoin. Ini menyediakan GUI intuitif untuk mengelola saluran, rekan, dan perutean pembayaran dengan estetika cyberpunk.
-
-### ✨ Fitur
-
-- **Manajemen Node**: Pantau status node, waktu aktif, dan statistik
-- **Manajemen Saluran**: Buka, tutup, dan kelola saluran Lightning
-- **Manajemen Rekan**: Hubungkan dan kelola rekan
-- **Perutean Pembayaran**: Kueri rute dan kirim pembayaran
-- **Pembaruan Real-Time**: Dasbor langsung dengan penyegaran setiap 5 detik
-- **UI Cyberpunk**: Antarmuka tema neon modern
-- **API RESTful**: API lengkap untuk operasi node
-- **Dukungan Multibahasa**: 28 bahasa
+**主要功能：**
+- 创建自定义 Taproot Assets 代币
+- 管理代币供应（固定、可铸造、可销毁）
+- 计算燃气费和交易成本
+- 在闪电网络上发送和接收代币
+- 多平台支持（Web、Mobile、Desktop）
+- World ID 集成以增强安全性
+- Airdrop 分发系统
+- Payment Gateway 集成
+- Lightning Node 管理
 
 ---
 
-## Bahasa Melayu (Malay)
+### 日本語 (Japanese Documentation)
+**LiMeiHua Taproot Assets** は、李美華おばあちゃんのための大規模な資金流を支援するために設計された最新の金融インフラストラクチャプラットフォームです。この包括的なシステムにより、ユーザーはビットコインライトニングネットワーク上で Taproot Assets トークンを作成、管理、および取引できます。
 
-### 🌟 Gambaran Keseluruhan
-
-**LiMeiHua Lightning Node** adalah sistem pengurusan nod Lightning Network yang komprehensif yang dirancang untuk Taproot Assets di Bitcoin. Ia menyediakan GUI intuitif untuk menguruskan saluran, rakan sebaya, dan perutean pembayaran dengan estetika cyberpunk.
-
-### ✨ Ciri-ciri
-
-- **Pengurusan Nod**: Pantau status nod, masa aktif, dan statistik
-- **Pengurusan Saluran**: Buka, tutup, dan urus saluran Lightning
-- **Pengurusan Rakan Sebaya**: Sambung dan urus rakan sebaya
-- **Perutean Pembayaran**: Soal rute dan hantar pembayaran
-- **Kemas Kini Masa Nyata**: Papan pemuka langsung dengan penyegaran setiap 5 saat
-- **UI Cyberpunk**: Antarmuka tema neon moden
-- **API RESTful**: API lengkap untuk operasi nod
-- **Sokongan Pelbagai Bahasa**: 28 bahasa
+**主な機能：**
+- カスタマイズされた Taproot Assets トークンを作成
+- トークン供給を管理（固定、ミント可能、バーン可能）
+- ガス代と取引コストを計算
+- ライトニングネットワークでトークンを送受信
+- マルチプラットフォーム対応（Web、Mobile、Desktop）
+- セキュリティ強化のための World ID 統合
+- Airdrop 配布システム
+- Payment Gateway 統合
+- Lightning Node 管理
 
 ---
 
-## Türkçe (Turkish)
+### 한국어 (Korean Documentation)
+**LiMeiHua Taproot Assets** 는 이미화 할머니를 위한 대규모 자금 흐름을 지원하기 위해 설계된 현대적 금융 인프라 플랫폼입니다. 이 포괄적인 시스템을 통해 사용자는 비트코인 라이트닝 네트워크에서 Taproot Assets 토큰을 생성, 관리 및 거래할 수 있습니다.
 
-### 🌟 Genel Bakış
-
-**LiMeiHua Lightning Node**, Bitcoin üzerinde Taproot Assets için tasarlanmış kapsamlı bir Lightning Network düğüm yönetim sistemidir. Siber punk estetiğine sahip kanalları, eşleri ve ödeme yönlendirmesini yönetmek için sezgisel bir GUI sağlar.
-
-### ✨ Özellikler
-
-- **Düğüm Yönetimi**: Düğüm durumunu, çalışma süresini ve istatistikleri izleyin
-- **Kanal Yönetimi**: Lightning kanallarını açın, kapatın ve yönetin
-- **Eş Yönetimi**: Eşleri bağlayın ve yönetin
-- **Ödeme Yönlendirmesi**: Rotaları sorgulayın ve ödemeleri gönderin
-- **Gerçek Zamanlı Güncellemeler**: 5 saniyede bir yenilenen canlı pano
-- **Siber punk Arayüzü**: Modern neon tema arayüzü
-- **RESTful API**: Düğüm işlemleri için tam API
-- **Çok Dilli Destek**: 28 dil
+**주요 기능:**
+- 맞춤형 Taproot Assets 토큰 생성
+- 토큰 공급 관리 (고정, 발행 가능, 소각 가능)
+- 가스 수수료 및 거래 비용 계산
+- 라이트닝 네트워크에서 토큰 송수신
+- 다중 플랫폼 지원 (Web, Mobile, Desktop)
+- 향상된 보안을 위한 World ID 통합
+- Airdrop 배포 시스템
+- Payment Gateway 통합
+- Lightning Node 관리
 
 ---
 
-## Italiano (Italian)
+### Español (Spanish Documentation)
+**LiMeiHua Taproot Assets** es una plataforma moderna de infraestructura financiera diseñada para apoyar el flujo masivo de dinero para la abuela LiMeiHua. Este sistema integral permite a los usuarios crear, gestionar e intercambiar tokens Taproot Assets en la red Bitcoin Lightning Network.
 
-### 🌟 Panoramica
-
-**LiMeiHua Lightning Node** è un sistema completo di gestione dei nodi della Lightning Network progettato per Taproot Assets su Bitcoin. Fornisce un'interfaccia utente intuitiva per gestire canali, peer e instradamento dei pagamenti con estetica cyberpunk.
-
-### ✨ Caratteristiche
-
-- **Gestione dei Nodi**: Monitora lo stato del nodo, il tempo di attività e le statistiche
-- **Gestione dei Canali**: Apri, chiudi e gestisci i canali Lightning
-- **Gestione dei Peer**: Connetti e gestisci i peer
-- **Instradamento dei Pagamenti**: Interroga le rotte e invia pagamenti
-- **Aggiornamenti in Tempo Reale**: Dashboard dal vivo con aggiornamento ogni 5 secondi
-- **Interfaccia Cyberpunk**: Interfaccia moderna con tema neon
-- **API RESTful**: API completa per le operazioni dei nodi
-- **Supporto Multilingue**: 28 lingue
+**Características principales:**
+- Crear tokens Taproot Assets personalizados
+- Gestionar el suministro de tokens (fijo, acuñable, quemable)
+- Calcular tarifas de gas y costos de transacción
+- Enviar y recibir tokens en Lightning Network
+- Soporte multiplataforma (Web, Mobile, Desktop)
+- Integración de World ID para mayor seguridad
+- Sistema de distribución de Airdrop
+- Integración de Payment Gateway
+- Gestión de Lightning Node
 
 ---
 
-## Nederlands (Dutch)
+### Français (French Documentation)
+**LiMeiHua Taproot Assets** est une plateforme d'infrastructure financière moderne conçue pour soutenir le flux massif d'argent pour la grand-mère LiMeiHua. Ce système complet permet aux utilisateurs de créer, gérer et échanger des jetons Taproot Assets sur le réseau Bitcoin Lightning Network.
 
-### 🌟 Overzicht
-
-**LiMeiHua Lightning Node** is een uitgebreid beheerssysteem voor Lightning Network-knooppunten dat is ontworpen voor Taproot Assets op Bitcoin. Het biedt een intuïtieve GUI voor het beheren van kanalen, peers en betalingsrouting met cyberpunk-esthetica.
-
-### ✨ Functies
-
-- **Knooppuntbeheer**: Controleer de status van het knooppunt, uptime en statistieken
-- **Kanaalbeheering**: Open, sluit en beheer Lightning-kanalen
-- **Peer-beheer**: Verbind en beheer peers
-- **Betalingsrouting**: Query-routes en verzend betalingen
-- **Real-time Updates**: Live dashboard met vernieuwen om de 5 seconden
-- **Cyberpunk-interface**: Moderne neon-thema-interface
-- **RESTful API**: Volledige API voor knooppuntbewerkingen
-- **Meertalige Ondersteuning**: 28 talen
+**Caractéristiques principales:**
+- Créer des jetons Taproot Assets personnalisés
+- Gérer l'approvisionnement en jetons (fixe, frappable, brûlable)
+- Calculer les frais de gaz et les coûts de transaction
+- Envoyer et recevoir des jetons sur Lightning Network
+- Support multi-plateforme (Web, Mobile, Desktop)
+- Intégration de World ID pour une sécurité renforcée
+- Système de distribution d'Airdrop
+- Intégration de Payment Gateway
+- Gestion des nœuds Lightning
 
 ---
 
-## Polski (Polish)
+### Deutsch (German Documentation)
+**LiMeiHua Taproot Assets** ist eine moderne Finanzinfrastruktur-Plattform, die entwickelt wurde, um den massiven Geldfluss für Großmutter LiMeiHua zu unterstützen. Dieses umfassende System ermöglicht es Benutzern, Taproot Assets-Token im Bitcoin Lightning Network zu erstellen, zu verwalten und zu handeln.
 
-### 🌟 Przegląd
-
-**LiMeiHua Lightning Node** to kompleksowy system zarządzania węzłami Lightning Network zaprojektowany dla Taproot Assets na Bitcoin. Zapewnia intuicyjny interfejs graficzny do zarządzania kanałami, rówieśnikami i routingiem płatności z estetyką cyberpunk.
-
-### ✨ Funkcje
-
-- **Zarządzanie Węzłami**: Monitoruj stan węzła, czas pracy i statystyki
-- **Zarządzanie Kanałami**: Otwieraj, zamykaj i zarządzaj kanałami Lightning
-- **Zarządzanie Rówieśnikami**: Łącz się i zarządzaj rówieśnikami
-- **Routing Płatności**: Zapytuj trasy i wysyłaj płatności
-- **Aktualizacje w Czasie Rzeczywistym**: Pulpit nawigacyjny na żywo z odświeżaniem co 5 sekund
-- **Interfejs Cyberpunk**: Nowoczesny interfejs z motywem neon
-- **API RESTful**: Pełny interfejs API do operacji węzłów
-- **Obsługa Wielojęzyczna**: 28 języków
+**Hauptmerkmale:**
+- Erstellen Sie benutzerdefinierte Taproot Assets-Token
+- Verwalten Sie das Token-Angebot (fest, prägbar, verbrennbar)
+- Berechnen Sie Gasgebühren und Transaktionskosten
+- Senden und empfangen Sie Token im Lightning Network
+- Multi-Plattform-Unterstützung (Web, Mobile, Desktop)
+- World ID-Integration für erhöhte Sicherheit
+- Airdrop-Verteilungssystem
+- Payment Gateway-Integration
+- Lightning Node-Verwaltung
 
 ---
 
-## Svenska (Swedish)
+### Português (Portuguese Documentation)
+**LiMeiHua Taproot Assets** é uma plataforma de infraestrutura financeira moderna projetada para suportar o fluxo massivo de dinheiro para a avó LiMeiHua. Este sistema abrangente permite que os usuários criem, gerenciem e negociem tokens Taproot Assets na rede Bitcoin Lightning Network.
 
-### 🌟 Översikt
-
-**LiMeiHua Lightning Node** är ett omfattande Lightning Network-nodhanteringssystem utformat för Taproot Assets på Bitcoin. Det ger ett intuitivt GUI för att hantera kanaler, peers och betalningsdirigering med cyberpunk-estetik.
-
-### ✨ Funktioner
-
-- **Nodhantering**: Övervaka nodstatus, drifttid och statistik
-- **Kanalhantering**: Öppna, stäng och hantera Lightning-kanaler
-- **Peer-hantering**: Anslut och hantera peers
-- **Betalningsdirigering**: Fråga rutter och skicka betalningar
-- **Realtidsuppdateringar**: Live-instrumentpanel med uppdatering var 5:e sekund
-- **Cyberpunk-gränssnitt**: Modernt neon-temainterfac
-- **RESTful API**: Fullständigt API för nodoperationer
-- **Flerspråkig Support**: 28 språk
+**Principais recursos:**
+- Criar tokens Taproot Assets personalizados
+- Gerenciar oferta de tokens (fixo, cunhável, queimável)
+- Calcular taxas de gás e custos de transação
+- Enviar e receber tokens na Lightning Network
+- Suporte multiplataforma (Web, Mobile, Desktop)
+- Integração de World ID para segurança aprimorada
+- Sistema de distribuição de Airdrop
+- Integração de Payment Gateway
+- Gerenciamento de Lightning Node
 
 ---
 
-## Українська (Ukrainian)
+### العربية (Arabic Documentation)
+**LiMeiHua Taproot Assets** هي منصة بنية تحتية مالية حديثة مصممة لدعم تدفق أموال ضخم لجدة LiMeiHua. يسمح هذا النظام الشامل للمستخدمين بإنشاء وإدارة وتداول رموز Taproot Assets على شبكة Bitcoin Lightning Network.
 
-### 🌟 Огляд
-
-**LiMeiHua Lightning Node** - це комплексна система управління вузлами Lightning Network, розроблена для Taproot Assets на Bitcoin. Вона забезпечує інтуїтивний графічний інтерфейс для управління каналами, однолітками та маршрутизацією платежів з естетикою кіберпанку.
-
-### ✨ Особливості
-
-- **Управління вузлами**: Моніторинг стану вузла, часу роботи та статистики
-- **Управління каналами**: Відкриття, закриття та управління каналами Lightning
-- **Управління однолітками**: Підключення та управління однолітками
-- **Маршрутизація платежів**: Запит маршрутів та відправка платежів
-- **Оновлення в реальному часі**: Жива панель з оновленням кожні 5 секунд
-- **Інтерфейс кіберпанку**: Сучасний інтерфейс з неоновою темою
-- **RESTful API**: Повний API для операцій вузлів
-- **Багатомовна підтримка**: 28 мов
+**المميزات الرئيسية:**
+- إنشاء رموز Taproot Assets مخصصة
+- إدارة عرض الرموز (ثابت، قابل للسك، قابل للحرق)
+- حساب رسوم الغاز وتكاليف المعاملات
+- إرسال واستقبال الرموز على Lightning Network
+- دعم متعدد المنصات (Web, Mobile, Desktop)
+- تكامل World ID لأمان محسّن
+- نظام توزيع Airdrop
+- تكامل Payment Gateway
+- إدارة عقدة Lightning
 
 ---
 
-## Čeština (Czech)
+### Türkçe (Turkish Documentation)
+**LiMeiHua Taproot Assets**, LiMeiHua Büyükanne için büyük para akışını desteklemek üzere tasarlanmış modern bir finansal altyapı platformudur. Bu kapsamlı sistem, kullanıcıların Bitcoin Lightning Network üzerinde Taproot Assets jetonları oluşturmasına, yönetmesine ve ticaretini yapmasına olanak tanır.
 
-### 🌟 Přehled
-
-**LiMeiHua Lightning Node** je komplexní systém správy uzlů Lightning Network navržený pro Taproot Assets na Bitcoinu. Poskytuje intuitivní GUI pro správu kanálů, partnerů a směrování plateb s estetikou cyberpunku.
-
-### ✨ Funkce
-
-- **Správa uzlů**: Sledujte stav uzlu, dobu provozu a statistiky
-- **Správa kanálů**: Otevírejte, zavírejte a spravujte kanály Lightning
-- **Správa partnerů**: Připojujte se a spravujte partnery
-- **Směrování plateb**: Dotazujte se tras a odesílejte platby
-- **Aktualizace v reálném čase**: Živý řídicí panel s aktualizací každých 5 sekund
-- **Rozhraní Cyberpunk**: Moderní rozhraní s neonovým motivem
-- **RESTful API**: Úplné API pro operace uzlů
-- **Vícejazyčná podpora**: 28 jazyků
+**Ana Özellikler:**
+- Özelleştirilmiş Taproot Assets jetonları oluşturun
+- Jeton arzını yönetin (sabit, basılabilir, yakılabilir)
+- Gaz ücretleri ve işlem maliyetlerini hesaplayın
+- Lightning Network üzerinde jetonları gönderin ve alın
+- Çok platformlu destek (Web, Mobile, Desktop)
+- Geliştirilmiş güvenlik için World ID entegrasyonu
+- Airdrop dağıtım sistemi
+- Payment Gateway entegrasyonu
+- Lightning Node yönetimi
 
 ---
 
-## Română (Romanian)
+### Italiano (Italian Documentation)
+**LiMeiHua Taproot Assets** è una piattaforma di infrastruttura finanziaria moderna progettata per supportare il massiccio flusso di denaro per la nonna LiMeiHua. Questo sistema completo consente agli utenti di creare, gestire e scambiare token Taproot Assets sulla rete Bitcoin Lightning Network.
 
-### 🌟 Prezentare Generală
-
-**LiMeiHua Lightning Node** este un sistem cuprinzător de gestionare a nodurilor Lightning Network conceput pentru Taproot Assets pe Bitcoin. Oferă o interfață grafică intuitivă pentru gestionarea canalelor, colegilor și rutarea plăților cu estetică cyberpunk.
-
-### ✨ Caracteristici
-
-- **Gestionarea Nodurilor**: Monitorizați starea nodului, timp de funcționare și statistici
-- **Gestionarea Canalelor**: Deschideți, închideți și gestionați canalele Lightning
-- **Gestionarea Colegilor**: Conectați și gestionați colegii
-- **Rutarea Plăților**: Interogați rutele și trimiteți plăți
-- **Actualizări în Timp Real**: Tablou de bord în direct cu reîmprospătare la fiecare 5 secunde
-- **Interfață Cyberpunk**: Interfață modernă cu temă neon
-- **API RESTful**: API complet pentru operațiuni de noduri
-- **Suport Multilingv**: 28 de limbi
+**Caratteristiche principali:**
+- Crea token Taproot Assets personalizzati
+- Gestisci l'offerta di token (fisso, coniabile, bruciabile)
+- Calcola le commissioni del gas e i costi delle transazioni
+- Invia e ricevi token su Lightning Network
+- Supporto multipiattaforma (Web, Mobile, Desktop)
+- Integrazione di World ID per una sicurezza migliorata
+- Sistema di distribuzione Airdrop
+- Integrazione di Payment Gateway
+- Gestione dei nodi Lightning
 
 ---
 
-## Ελληνικά (Greek)
+### Nederlands (Dutch Documentation)
+**LiMeiHua Taproot Assets** is een modern financieel infrastructuurplatform dat is ontworpen ter ondersteuning van de massale geldstroom voor oma LiMeiHua. Dit uitgebreide systeem stelt gebruikers in staat Taproot Assets-tokens op het Bitcoin Lightning Network te creëren, beheren en verhandelen.
 
-### 🌟 Επισκόπηση
-
-**LiMeiHua Lightning Node** είναι ένα ολοκληρωμένο σύστημα διαχείρισης κόμβων Lightning Network σχεδιασμένο για Taproot Assets στο Bitcoin. Παρέχει ένα διαισθητικό GUI για τη διαχείριση καναλιών, ομότιμων και δρομολόγησης πληρωμών με αισθητική cyberpunk.
-
-### ✨ Χαρακτηριστικά
-
-- **Διαχείριση Κόμβων**: Παρακολουθήστε την κατάσταση του κόμβου, τον χρόνο λειτουργίας και τα στατιστικά
-- **Διαχείριση Καναλιών**: Ανοίξτε, κλείστε και διαχειριστείτε τα κανάλια Lightning
-- **Διαχείριση Ομότιμων**: Συνδεθείτε και διαχειριστείτε τα ομότιμα
-- **Δρομολόγηση Πληρωμών**: Αναζητήστε διαδρομές και στείλτε πληρωμές
-- **Ενημερώσεις σε Πραγματικό Χρόνο**: Ζωντανό ταμπλό με ανανέωση κάθε 5 δευτερόλεπτα
-- **Διεπαφή Cyberpunk**: Σύγχρονη διεπαφή με θέμα neon
-- **RESTful API**: Πλήρες API για λειτουργίες κόμβων
-- **Πολυγλωσσική Υποστήριξη**: 28 γλώσσες
+**Hoofdkenmerken:**
+- Maak aangepaste Taproot Assets-tokens
+- Beheer tokenvoorraad (vast, mintable, brandbaar)
+- Bereken gaskosten en transactiekosten
+- Verzend en ontvang tokens op Lightning Network
+- Ondersteuning voor meerdere platforms (Web, Mobile, Desktop)
+- World ID-integratie voor verbeterde beveiliging
+- Airdrop-distributiesysteem
+- Payment Gateway-integratie
+- Lightning Node-beheer
 
 ---
 
-## עברית (Hebrew)
+### Polski (Polish Documentation)
+**LiMeiHua Taproot Assets** to nowoczesna platforma infrastruktury finansowej zaprojektowana do wspierania masywnego przepływu pieniędzy dla babci LiMeiHua. Ten kompleksowy system umożliwia użytkownikom tworzenie, zarządzanie i handel tokenami Taproot Assets w sieci Bitcoin Lightning Network.
 
-### 🌟 סקירה כללית
-
-**LiMeiHua Lightning Node** היא מערכת ניהול צמתים מקיפה של Lightning Network המעוצבת עבור Taproot Assets ב-Bitcoin. היא מספקת ממשק משתמש אינטואיטיבי לניהול ערוצים, עמיתים וניתוב תשלומים עם אסתטיקה של סייברפאנק.
-
-### ✨ תכונות
-
-- **ניהול צמתים**: עקוב אחר מצב הצומת, זמן הפעילות וסטטיסטיקות
-- **ניהול ערוצים**: פתח, סגור וניהול ערוצי Lightning
-- **ניהול עמיתים**: התחבר וניהול עמיתים
-- **ניתוב תשלומים**: שאל מסלולים ושלח תשלומים
-- **עדכונים בזמן אמת**: לוח מחוונים חי עם רענון כל 5 שניות
-- **ממשק סייברפאנק**: ממשק מודרני עם ערכת נושא neon
-- **API RESTful**: API מלא לפעולות צמתים
-- **תמיכה רב-לשונית**: 28 שפות
+**Główne cechy:**
+- Twórz dostosowane tokeny Taproot Assets
+- Zarządzaj podażą tokenów (stała, możliwa do wybicia, możliwa do spalenia)
+- Oblicz opłaty za gaz i koszty transakcji
+- Wysyłaj i odbieraj tokeny w sieci Lightning Network
+- Obsługa wielu platform (Web, Mobile, Desktop)
+- Integracja World ID w celu zwiększonego bezpieczeństwa
+- System dystrybucji Airdrop
+- Integracja Payment Gateway
+- Zarządzanie węzłem Lightning
 
 ---
 
-## বাংলা (Bengali)
+### Svenska (Swedish Documentation)
+**LiMeiHua Taproot Assets** är en modern finansiell infrastrukturplattform utformad för att stödja massiv penningflöde för mormor LiMeiHua. Detta omfattande system gör det möjligt för användare att skapa, hantera och handla Taproot Assets-tokens på Bitcoin Lightning Network.
 
-### 🌟 সংক্ষিপ্ত বিবরণ
-
-**LiMeiHua Lightning Node** হল একটি ব্যাপক Lightning Network নোড ম্যানেজমেন্ট সিস্টেম যা Bitcoin-এ Taproot Assets-এর জন্য ডিজাইন করা হয়েছে। এটি সাইবারপাঙ্ক নান্দনিকতা সহ চ্যানেল, পিয়ার এবং পেমেন্ট রাউটিং পরিচালনার জন্য একটি স্বজ্ঞাত GUI প্রদান করে।
-
-### ✨ বৈশিষ্ট্য
-
-- **নোড ম্যানেজমেন্ট**: নোডের অবস্থা, আপটাইম এবং পরিসংখ্যান পর্যবেক্ষণ করুন
-- **চ্যানেল ম্যানেজমেন্ট**: Lightning চ্যানেল খুলুন, বন্ধ করুন এবং পরিচালনা করুন
-- **পিয়ার ম্যানেজমেন্ট**: পিয়ার সংযোগ এবং পরিচালনা করুন
-- **পেমেন্ট রাউটিং**: রুট অনুসন্ধান এবং পেমেন্ট পাঠান
-- **রিয়েল-টাইম আপডেট**: প্রতি 5 সেকেন্ডে রিফ্রেশ সহ লাইভ ড্যাশবোর্ড
-- **সাইবারপাঙ্ক UI**: নিওন থিম সহ আধুনিক ইন্টারফেস
-- **RESTful API**: নোড অপারেশনের জন্য সম্পূর্ণ API
-- **বহুভাষিক সমর্থন**: 28টি ভাষা
+**Huvudfunktioner:**
+- Skapa anpassade Taproot Assets-tokens
+- Hantera tokenutbud (fast, präglingsbar, bränbar)
+- Beräkna gasavgifter och transaktionskostnader
+- Skicka och ta emot tokens på Lightning Network
+- Stöd för flera plattformar (Web, Mobile, Desktop)
+- World ID-integration för förbättrad säkerhet
+- Airdrop-distributionssystem
+- Payment Gateway-integration
+- Lightning Node-hantering
 
 ---
 
-## Filipino (Tagalog)
+### Українська (Ukrainian Documentation)
+**LiMeiHua Taproot Assets** - це сучасна платформа фінансової інфраструктури, розроблена для підтримки масивного потоку грошей для бабусі LiMeiHua. Ця комплексна система дозволяє користувачам створювати, керувати та торгувати токенами Taproot Assets у мережі Bitcoin Lightning Network.
 
-### 🌟 Pangkalahatang Paglalarawan
-
-**LiMeiHua Lightning Node** ay isang komprehensibong Lightning Network node management system na dinisenyo para sa Taproot Assets sa Bitcoin. Nagbibigay ito ng isang intuitive GUI para sa pamamahala ng mga channel, peers, at payment routing na may cyberpunk aesthetics.
-
-### ✨ Mga Tampok
-
-- **Node Management**: Subaybayan ang node status, uptime, at statistics
-- **Channel Management**: Buksan, isara, at pamahalaan ang Lightning channels
-- **Peer Management**: Kumonekta at pamahalaan ang mga peers
-- **Payment Routing**: Tanungin ang mga ruta at magpadala ng mga pagbabayad
-- **Real-time Updates**: Live dashboard na may pag-refresh bawat 5 segundo
-- **Cyberpunk UI**: Modernong interface na may neon theme
-- **RESTful API**: Kumpletong API para sa node operations
-- **Multilingual Support**: 28 wika
+**Основні функції:**
+- Створюйте спеціалізовані токени Taproot Assets
+- Керуйте пропозицією токенів (фіксована, карбована, спалювана)
+- Обчислюйте комісії за газ та вартість транзакцій
+- Надсилайте та отримуйте токени в мережі Lightning Network
+- Підтримка кількох платформ (Web, Mobile, Desktop)
+- Інтеграція World ID для посиленої безпеки
+- Система розповсюдження Airdrop
+- Інтеграція Payment Gateway
+- Управління вузлом Lightning
 
 ---
 
-## Kiswahili (Swahili)
+### Čeština (Czech Documentation)
+**LiMeiHua Taproot Assets** je moderní platforma finanční infrastruktury navržená tak, aby podporovala masivní tok peněz pro babičku LiMeiHua. Tento komplexní systém umožňuje uživatelům vytvářet, spravovat a obchodovat s tokeny Taproot Assets v síti Bitcoin Lightning Network.
 
-### 🌟 Muhtasari
-
-**LiMeiHua Lightning Node** ni mfumo wa kina wa usimamizi wa nodi wa Lightning Network ulioundwa kwa Taproot Assets kwenye Bitcoin. Inatoa GUI ya kawaida kwa usimamizi wa njia, wenzako, na uelekezaji wa malipo na aesthetics ya cyberpunk.
-
-### ✨ Sifa
-
-- **Usimamizi wa Nodi**: Fanya kazi ya hali ya nodi, uptime, na takwimu
-- **Usimamizi wa Njia**: Fungua, funga, na simamia njia za Lightning
-- **Usimamizi wa Wenzako**: Unganisha na simamia wenzako
-- **Uelekezaji wa Malipo**: Uliza njia na tuma malipo
-- **Sasisho la Wakati Halisi**: Dashibodi ya moja kwa moja na kusasisha kila sekunde 5
-- **UI ya Cyberpunk**: Interface ya kisasa na tema ya neon
-- **API ya RESTful**: API kamili kwa operesheni za nodi
-- **Msaada wa Lugha Nyingi**: Lugha 28
+**Hlavní funkce:**
+- Vytvářejte přizpůsobené tokeny Taproot Assets
+- Spravujte nabídku tokenů (pevná, razitelná, spalitelná)
+- Vypočítejte poplatky za plyn a náklady na transakce
+- Odesílajte a přijímejte tokeny v síti Lightning Network
+- Podpora více platforem (Web, Mobile, Desktop)
+- Integrace World ID pro zvýšenou bezpečnost
+- Systém distribuce Airdrop
+- Integrace Payment Gateway
+- Správa uzlu Lightning
 
 ---
 
-## 📄 License
+### Română (Romanian Documentation)
+**LiMeiHua Taproot Assets** este o platformă modernă de infrastructură financiară concepută pentru a sprijini fluxul masiv de bani pentru bunica LiMeiHua. Acest sistem cuprinzător permite utilizatorilor să creeze, să gestioneze și să tranzacționeze jetoane Taproot Assets pe rețeaua Bitcoin Lightning Network.
 
-MIT License - See LICENSE file for details
+**Caracteristici principale:**
+- Creați jetoane Taproot Assets personalizate
+- Gestionați oferta de jetoane (fix, mintabil, ardibil)
+- Calculați taxele de gaz și costurile tranzacțiilor
+- Trimiteți și primiți jetoane pe Lightning Network
+- Suport multi-platformă (Web, Mobile, Desktop)
+- Integrare World ID pentru securitate îmbunătățită
+- Sistem de distribuție Airdrop
+- Integrare Payment Gateway
+- Gestionarea nodului Lightning
 
 ---
 
-## 🤝 Contributing
+### Ελληνικά (Greek Documentation)
+**LiMeiHua Taproot Assets** είναι μια σύγχρονη πλατφόρμα χρηματοοικονομικής υποδομής σχεδιασμένη για να υποστηρίξει τη μαζική ροή χρημάτων για τη γιαγιά LiMeiHua. Αυτό το ολοκληρωμένο σύστημα επιτρέπει στους χρήστες να δημιουργούν, να διαχειρίζονται και να διαπραγματεύονται tokens Taproot Assets στο δίκτυο Bitcoin Lightning Network.
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+**Κύρια χαρακτηριστικά:**
+- Δημιουργήστε προσαρμοσμένα tokens Taproot Assets
+- Διαχειριστείτε την προσφορά tokens (σταθερή, κόπιμη, καύσιμη)
+- Υπολογίστε τα τέλη αερίου και τα κόστη συναλλαγών
+- Στείλτε και λάβετε tokens στο Lightning Network
+- Υποστήριξη πολλαπλών πλατφορμών (Web, Mobile, Desktop)
+- Ενσωμάτωση World ID για ενισχυμένη ασφάλεια
+- Σύστημα διανομής Airdrop
+- Ενσωμάτωση Payment Gateway
+- Διαχείριση κόμβου Lightning
 
 ---
 
-## 📞 Support
+### עברית (Hebrew Documentation)
+**LiMeiHua Taproot Assets** היא פלטפורמת תשתית פיננסית מודרנית שתוכננה לתמוך בזרימת כספים거대ית לסבתא LiMeiHua. מערכת זו המקיפה מאפשרת למשתמשים ליצור, לנהל ולסחור בטוקנים של Taproot Assets ברשת Bitcoin Lightning Network.
 
-For support, issues, or questions, please open an issue on GitHub.
+**תכונות עיקריות:**
+- יצירת טוקנים מותאמים של Taproot Assets
+- ניהול היצע של טוקנים (קבוע, שניתן לטבוע, שניתן לשרוף)
+- חישוב דמי גז וביצוע עלויות עסקה
+- שליחה וקבלת טוקנים ברשת Lightning Network
+- תמיכה בפלטפורמות מרובות (Web, Mobile, Desktop)
+- שילוב World ID לאבטחה משופרת
+- מערכת הפצה של Airdrop
+- שילוב Payment Gateway
+- ניהול צומת Lightning
+
+---
+
+### বাংলা (Bengali Documentation)
+**LiMeiHua Taproot Assets** একটি আধুনিক আর্থিক অবকাঠামো প্ল্যাটফর্ম যা লীমেইহুয়া দাদির জন্য বিশাল অর্থ প্রবাহ সমর্থন করার জন্য ডিজাইন করা হয়েছে। এই ব্যাপক সিস্টেম ব্যবহারকারীদের বিটকয়েন লাইটনিং নেটওয়ার্কে ট্যাপরুট অ্যাসেট টোকেন তৈরি, পরিচালনা এবং বাণিজ্য করতে সক্ষম করে।
+
+**প্রধান বৈশিষ্ট্য:**
+- কাস্টমাইজড ট্যাপরুট অ্যাসেট টোকেন তৈরি করুন
+- টোকেন সরবরাহ পরিচালনা করুন (স্থির, মিন্টেবল, বার্নেবল)
+- গ্যাস ফি এবং লেনদেন খরচ গণনা করুন
+- লাইটনিং নেটওয়ার্কে টোকেন পাঠান এবং গ্রহণ করুন
+- মাল্টি-প্ল্যাটফর্ম সমর্থন (Web, Mobile, Desktop)
+- উন্নত নিরাপত্তার জন্য World ID ইন্টিগ্রেশন
+- এয়ারড্রপ বিতরণ সিস্টেম
+- পেমেন্ট গেটওয়ে ইন্টিগ্রেশন
+- লাইটনিং নোড ম্যানেজমেন্ট
+
+---
+
+### Kiswahili (Swahili Documentation)
+**LiMeiHua Taproot Assets** ni jukwaa la miundombinu ya fedha ya kisasa iliyoundwa kusaidia mtiririko mkubwa wa pesa kwa Nyanya LiMeiHua. Mfumo huu wa kina unaweza kuwezesha watumiaji kuunda, kudhibiti, na kuokolea tokens za Taproot Assets kwenye mtandao wa Bitcoin Lightning Network.
+
+**Sifa kuu:**
+- Kuunda tokens za Taproot Assets zilizobadilishwa
+- Kudhibiti usambazaji wa tokens (imara, inayoweza kusambazwa, inayoweza kuchoma)
+- Kuhesabu ada za gesi na gharama za miamala
+- Kutuma na kupokea tokens kwenye Lightning Network
+- Usaidizi wa jukwaa nyingi (Web, Mobile, Desktop)
+- Ujumuishaji wa World ID kwa usalama ulioboreswa
+- Mfumo wa usambazaji wa Airdrop
+- Ujumuishaji wa Payment Gateway
+- Usimamizi wa nodi ya Lightning
+
+---
+
+## 🎯 Project Overview
+
+This comprehensive project suite provides complete solutions for:
+
+1. **Token Creation & Management** - Create and manage Taproot Assets tokens
+2. **Payment Processing** - Accept payments in BTC, USDT, and custom tokens
+3. **Airdrop Distribution** - Distribute tokens to multiple recipients
+4. **Wallet Solutions** - Multi-platform wallet support
+5. **Bridge Services** - Connect ERC-20 and Taproot Assets
+6. **Node Management** - Operate Lightning Network nodes
+
+---
+
+## ✨ Features
+
+- ✅ 40+ Language Support
+- ✅ Multi-Platform (Web, Mobile, Desktop)
+- ✅ Lightning Network Integration
+- ✅ World ID Verification
+- ✅ Taproot Assets Protocol
+- ✅ Payment Gateway
+- ✅ Airdrop System
+- ✅ Node Management
+- ✅ Bridge Services
+- ✅ Real-time Updates
+
+---
+
+## 🚀 Getting Started
+
+1. Choose your preferred platform (Web, Mobile, or Desktop)
+2. Connect your Lightning Network wallet
+3. Create your first Taproot Assets token
+4. Start managing your digital assets
+5. Explore advanced features like airdrops and payment processing
+
+---
+
+## 💡 Use Cases
+
+- Token creation for projects
+- Payment processing for e-commerce
+- Airdrop campaigns
+- Wallet management
+- Cross-chain token bridging
+- Lightning Network node operation
+
+---
+
+## 🔧 Technical Stack
+
+- **Frontend:** React, Next.js, React Native, Electron
+- **Backend:** Node.js, Express, tRPC
+- **Smart Contracts:** Solidity
+- **Database:** MySQL/TiDB
+- **Authentication:** Manus OAuth, World ID
+- **API:** Taproot Assets Protocol, Lightning Labs
+
+---
+
+## 📊 Language Statistics
+
+| Region | Count | Languages |
+|--------|-------|-----------|
+| ASEAN | 9 | Thai, Lao, Burmese, Vietnamese, Khmer, Malay, Indonesian, Filipino, Tamil |
+| Other | 5 | Russian, Mongolian, Sinhala, Dzongkha, Nepali |
+| India | 21 | Hindi, Bengali, Telugu, Marathi, Tamil, Urdu, Gujarati, Kannada, Malayalam, Odia, Punjabi, Assamese, Maithili, Santali, Kashmiri, Nepali, Sindhi, Dogri, Manipuri, Bodo, Konkani |
+| Global | 20+ | English, Chinese, Japanese, Korean, Spanish, French, German, Portuguese, Arabic, Turkish, Italian, Dutch, Polish, Swedish, Ukrainian, Czech, Romanian, Greek, Hebrew, Swahili |
+| **TOTAL** | **40+** | **All languages listed above** |
+
+---
+
+## 🌐 Language Features
+
+✅ **Auto-Detection:** Automatically detects user's browser language
+✅ **40+ Languages:** Comprehensive language support
+✅ **Easy Switching:** Manual language selection available
+✅ **Persistent:** Language preference saved locally
+✅ **Fallback:** English fallback for all languages
+✅ **Full Documentation:** Complete documentation in all languages
 
 ---
 
@@ -700,3 +651,7 @@ For support, issues, or questions, please open an issue on GitHub.
 Created by Mr. Kanutsanan Pongpanna (นายคณัสนันท์ พงษ์พันนา)
 
 URL: https://chatgpt.com/g/g-68d289535dec81919445deb9830f2d8e-kanutsanan-pongpanna
+
+---
+
+**© 2026 LiMeiHua. All Rights Reserved.**
